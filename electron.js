@@ -16,7 +16,7 @@ function createWindow() {
 
     mainWindow.loadURL(
         isDev
-            ? 'http://localhost:3000'
+            ? 'https://cristian04yamil.github.io/chat_app/'
             : `file://${path.join(__dirname, '../build/index.html')}`
     );
 
