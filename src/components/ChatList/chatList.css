@@ -1,0 +1,32 @@
+.message-list {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .message-item {
+    /* margin-bottom: 10px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc; */
+  }
+
+  .sender-john {
+    background-color: #eaf6ff;
+    color: #000;
+  }
+  
+  .sender-jane {
+    background-color: #fff9e6;
+    color: #000;
+  }
+
+  @media screen and (max-width: 600px) {
+    .message-list {
+      padding: 5px;
+    }
+  
+    .message-item {
+      padding: 5px;
+    }
+  }

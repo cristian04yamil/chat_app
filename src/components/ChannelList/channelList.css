@@ -1,0 +1,14 @@
+.channel-list li.selected {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+
+  .alert-success {
+    --bs-alert-color: var(--bs-success-text-emphasis) !important;
+    --bs-alert-bg: var(--bs-success-bg-subtle) !important;
+    --bs-alert-border-color: var(--bs-success-border-subtle) !important;
+    --bs-alert-link-color: var(--bs-success-text-emphasis) !important;
+  }
+  .alert {
+    cursor: pointer !important;
+  }
