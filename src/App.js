@@ -1,14 +1,14 @@
 import "./App.css";
-import LoginForm from "./components/LoginForm/LoginForm";
+// import LoginForm from "./components/LoginForm/LoginForm";
 import Home from "./components/Home/Home";
 import React, { useState } from "react";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Route,
+//   Routes,
+//   Navigate,
+// } from "react-router-dom";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -23,22 +23,23 @@ const App = () => {
   };
 
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={isLoggedIn ? <Home /> : <Navigate to="/" replace />}
-        />
-        <Route
-          path="/login"
-          element={<LoginForm handleLogin={handleLogin} />}
-        />
-        <Route
-          path="/messages"
-          element={isLoggedIn ? <Home /> : <Navigate to="/login" replace />}
-        />
-      </Routes>
-    </Router>
+    <Home />
+    // <Router>
+    //   <Routes>
+    //     <Route
+    //       path="/"
+    //       element={isLoggedIn ? <Home /> : <Navigate to="/" replace />}
+    //     />
+    //     <Route
+    //       path="/login"
+    //       element={<LoginForm handleLogin={handleLogin} />}
+    //     />
+    //     <Route
+    //       path="/messages"
+    //       element={isLoggedIn ? <Home /> : <Navigate to="/login" replace />}
+    //     />
+    //   </Routes>
+    // </Router>
   );
 };
 

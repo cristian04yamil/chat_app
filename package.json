@@ -1,6 +1,6 @@
 {
   "name": "chat-app",
-  "homepage": "https://cristian04yamil.github.io/chat_app",
+  "homepage": "http://cristian04yamil.github.io/chat_app",
   "version": "0.1.0",
   "private": true,
   "main": "public/electron.js",
@@ -10,8 +10,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.0",
-    "electron": "^25.1.0",
-    "electron-is-dev": "^2.0.0",
     "firebase": "^9.22.2",
     "mdb-react-ui-kit": "^6.1.0",
     "react": "^18.2.0",
@@ -28,6 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron": "electron .",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -48,7 +47,26 @@
       "last 1 safari version"
     ]
   },
+  "build": {
+    "appId": "com.miaplicacionelectron",
+    "productName": "My Live Chat Electron",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
   "devDependencies": {
+    "electron": "^25.1.0",
+    "electron-is-dev": "^2.0.0",
+    "electron-builder": "^23.6.0",
     "gh-pages": "^5.0.0"
   }
 }

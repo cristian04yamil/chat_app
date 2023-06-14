@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ref, onValue, off, push, serverTimestamp } from "firebase/database";
-import { database } from "../../utils/firebase"; import 'mdb-react-ui-kit/dist/css/mdb.min.css';
-import PeopleChat from '../../components/PeopleChat/PeopleChat';
-
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import { database } from "../../services/firebase";
+import Chat from '../../components/Chat/Chat';
 import {
     MDBContainer,
     MDBRow,
@@ -38,13 +38,6 @@ export default function CardChat({ selectedChannel, username }) {
         }
     };
 
-    const getSenderStyle = (sender) => {
-        if (!senderColors[sender]) {
-            senderColors[sender] = generateRandomColor();
-        }
-        return { backgroundColor: senderColors[sender] };
-    };
-
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
@@ -66,7 +59,6 @@ export default function CardChat({ selectedChannel, username }) {
     };
 
     useEffect(() => {
-        console.log('aaaa' + username)
         const messagesRef = ref(database, "messages");
         onValue(messagesRef, (snapshot) => {
             const messagesData = snapshot.val();
@@ -115,7 +107,7 @@ export default function CardChat({ selectedChannel, username }) {
                         </MDBCardHeader>
                         <MDBCardBody>
                             {messages.map((message) => (
-                                <PeopleChat key={message.id} message={message} username={username}></PeopleChat>
+                                <Chat key={message.id} message={message} username={username}></Chat>
                             ))}
                             <MDBTextArea
                                 className="form-outline"

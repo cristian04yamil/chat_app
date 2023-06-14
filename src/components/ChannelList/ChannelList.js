@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ref, onValue, off, push, serverTimestamp } from "firebase/database";
-import { database } from "../../utils/firebase";
+import { database } from "../../services/firebase";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import CardChat from '../../components/CardChat/CardChat';
 
@@ -36,7 +36,6 @@ function ChannelList({ onSelectChannel, selectedChannel, onSelectedUser, usernam
   };
 
   const selectedUser = (value) => {
-    console.log(value);
     setUser(value);
   };
 
@@ -44,7 +43,6 @@ function ChannelList({ onSelectChannel, selectedChannel, onSelectedUser, usernam
     const messagesRef = ref(database, "channel");
     onValue(messagesRef, (snapshot) => {
       const messagesData = snapshot.val();
-      console.log(messagesData);
       if (messagesData) {
         const messagesList = Object.keys(messagesData).map((key) => ({
           id: key,
@@ -62,7 +60,6 @@ function ChannelList({ onSelectChannel, selectedChannel, onSelectedUser, usernam
   }, []);
 
   useEffect(() => {
-    console.log('selected channel changed')
   }, [selectedChannelId]);
 
   // return (
