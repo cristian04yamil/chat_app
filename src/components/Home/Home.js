@@ -26,10 +26,6 @@ function Home() {
       <ChannelList onSelectChannel={handleChannelSelect} selectedChannel={selectedChannel} onSelectedUser={selectedUser}
         username={user} />
 
-      {/* <CardChat 
-        selectedChannel={selectedChannel} 
-        onSelectedUser={selectedUser} username={user}>
-      </CardChat> */}
     </div>
   );
 }
