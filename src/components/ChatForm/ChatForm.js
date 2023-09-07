@@ -28,10 +28,6 @@ return (
           <Form.Control value={userName} placeholder="username" readOnly={existUser} onChange={handleUserNameChange}
           />
         </Col>
-        {/* <Col xs="auto">
-            <Form.Control value={message} placeholder="message" onChange={handleMessageChange}
-            />
-          </Col> */}
         <Col>
           <Button variant="success" onClick={saveUsername}>
             Set Username
