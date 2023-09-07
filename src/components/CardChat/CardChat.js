@@ -32,7 +32,6 @@ export default function CardChat({ selectedChannel, username }) {
             const randomIndex = Math.floor(Math.random() * colors.length);
             return colors[randomIndex];
         } else {
-            // Si hay colores disponibles, seleccionar uno aleatorio
             const randomIndex = Math.floor(Math.random() * availableColors.length);
             return availableColors[randomIndex];
         }
