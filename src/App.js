@@ -24,22 +24,6 @@ const App = () => {
 
   return (
     <Home />
-    // <Router>
-    //   <Routes>
-    //     <Route
-    //       path="/"
-    //       element={isLoggedIn ? <Home /> : <Navigate to="/" replace />}
-    //     />
-    //     <Route
-    //       path="/login"
-    //       element={<LoginForm handleLogin={handleLogin} />}
-    //     />
-    //     <Route
-    //       path="/messages"
-    //       element={isLoggedIn ? <Home /> : <Navigate to="/login" replace />}
-    //     />
-    //   </Routes>
-    // </Router>
   );
 };
 
